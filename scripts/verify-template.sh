@@ -41,7 +41,10 @@ for forbidden in Directory.Build.props Directory.Packages.props NuGet.Config gre
 done
 
 test ! -d "src/gregMod.TemplateMod" || { echo "Forbidden legacy C# source tree present" >&2; exit 1; }
-test ! -d "scripts" || { echo "Legacy scripts directory must not be present in the Rust baseline" >&2; exit 1; }
+
+for legacy_script in scripts/build.ps1 scripts/build.sh scripts/deploy.py scripts/init-template.py scripts/package-release.py scripts/setup-dev.py scripts/verify-env.py; do
+  test ! -e "$legacy_script" || { echo "Forbidden legacy script present: $legacy_script" >&2; exit 1; }
+done
 
 for feature in docs/features/F-*; do
   [ -d "$feature" ] || continue
