@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <AssemblyName>gregMod.TemplateMod</AssemblyName>
+    <RootNamespace>GregMod.TemplateMod</RootNamespace>
+    <Version>0.1.0</Version>
+    <Authors>mleem97</Authors>
+    <Description>Template mod for Data Center</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="Exists('$(GregCorePath)')">
+    <DefineConstants>$(DefineConstants);GREGCORE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LavaGang.MelonLoader" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup Condition="Exists('$(GameInteropDir)')">
+    <Reference Include="$(GameInteropDir)/*.dll">
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup Condition="Exists('$(GregCorePath)')">
+    <Reference Include="gregCore">
+      <HintPath>$(GregCorePath)</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="ValidateGameReferences"
+          BeforeTargets="CoreCompile"
+          Condition="'$(SkipGameReferenceValidation)' != 'true'">
+    <Error Condition="!Exists('$(GameInteropDir)/Assembly-CSharp.dll')"
+           Text="Assembly-CSharp.dll was not found in $(GameInteropDir). Run scripts/setup-dev.py." />
+    <Error Condition="!Exists('$(GameInteropDir)/Il2Cppmscorlib.dll')"
+           Text="Il2Cppmscorlib.dll was not found in $(GameInteropDir). Run scripts/setup-dev.py." />
+    <Error Condition="!Exists('$(GameInteropDir)/UnityEngine.CoreModule.dll')"
+           Text="UnityEngine.CoreModule.dll was not found in $(GameInteropDir). Run scripts/setup-dev.py." />
+  </Target>
+
+  <Target Name="CopyModArtifact" AfterTargets="Build">
+    <MakeDir Directories="$(ArtifactsDir)" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ArtifactsDir)" />
+    <Copy SourceFiles="$(TargetDir)$(AssemblyName).pdb"
+          DestinationFolder="$(ArtifactsDir)"
+          Condition="Exists('$(TargetDir)$(AssemblyName).pdb')" />
+    <Copy SourceFiles="$(TargetDir)$(AssemblyName).xml"
+          DestinationFolder="$(ArtifactsDir)"
+          Condition="Exists('$(TargetDir)$(AssemblyName).xml')" />
+  </Target>
+</Project>
