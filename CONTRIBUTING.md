@@ -1,9 +1,30 @@
 # Contributing
 
-1. Create a focused branch.
-2. Keep game-specific reflection and Harmony targets isolated from feature logic.
-3. Do not commit game binaries, generated IL2CPP proxy assemblies, Unity assemblies, or private credentials.
-4. Run `python scripts/verify-env.py` and a Release build before opening a pull request.
-5. Update `CHANGELOG.md` for user-visible changes.
+## Before you start
 
-Prefer small patches with explicit failure logging. Avoid swallowing exceptions unless a game lifecycle transition is known to make an operation best-effort.
+Read:
+
+1. `AGENTS.md`
+2. `.agents/policy/NORMATIVE-RULES.md`
+3. `docs/README.md`
+
+## Workflow
+
+1. Create a focused branch.
+2. Update the relevant PRD/ADR/DDR before material implementation changes.
+3. Implement the smallest coherent change.
+4. Run formatting, Clippy, tests, documentation and security checks.
+5. Update the task graph and documentation status.
+6. Open a pull request.
+
+## Do not
+
+- commit secrets;
+- disable security checks to make CI pass;
+- remove tests to hide failures;
+- duplicate agent instructions;
+- create a new documentation source for information that already has a canonical location.
+
+## Template placeholders
+
+Generated repositories should replace placeholders such as `<USER_NAME>` through the initialization workflow rather than hard-coding a real future user into this template.

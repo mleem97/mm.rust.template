@@ -1,0 +1,4 @@
+* @<USER_NAME>
+/.agents/ @<USER_NAME>
+/docs/security/ @<USER_NAME>
+/.github/workflows/ @<USER_NAME>

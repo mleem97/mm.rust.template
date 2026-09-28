@@ -1,13 +1,7 @@
-# Local references
+# References
 
-Do not commit DLLs to this directory.
+This directory is reserved for external reference material that is not canonical project documentation.
 
-The preferred setup is to run:
+Do not store secrets, proprietary binaries, generated build output, or duplicated policy here.
 
-```bash
-python scripts/setup-dev.py --game-dir "/path/to/Data Center"
-```
-
-The project then references the generated proxy assemblies directly from `MelonLoader/Il2CppAssemblies`.
-
-For an isolated or CI build, place the generated proxy assemblies in `.deps/interop/` or set `GREGMOD_INTEROP_DIR`.
+Canonical project knowledge belongs under `docs/`.
