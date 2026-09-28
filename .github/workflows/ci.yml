@@ -27,6 +27,9 @@ jobs:
           toolchain: stable
           components: rustfmt, clippy
 
+      - name: Template governance gate
+        run: bash scripts/verify-template.sh
+
       - name: Format
         run: cargo fmt --all -- --check
 
