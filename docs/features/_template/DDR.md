@@ -1,10 +1,14 @@
 # DDR — <FEATURE_ID>
 
-## User problem
+## User/problem context
 
 ## Design decision
 
-## Interaction
+## Interaction / information architecture
+
+## Visual/UI dimension
+
+If there is no graphical UI, explicitly state that this dimension is not applicable and document the relevant non-visual design consequences.
 
 ## Accessibility
 
@@ -16,4 +20,9 @@
 
 ## Consequences
 
+## Validation
+
 ## Related
+
+- PRD:
+- ADR:

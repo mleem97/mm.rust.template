@@ -14,8 +14,12 @@ docs/features/F-<NUMBER>-<slug>/
 └── README.md
 ```
 
+Every feature MUST contain all seven decision/product/design/security/testing artifacts.
+
 `design.md` is authoritative for visual/UI design.
 
 `architecture.md` is authoritative for UX architecture: information architecture, interaction flows, navigation, state model, and user journeys.
+
+If a feature has no graphical UI, `design.md` and the DDR explicitly record the non-visual design constraints and why a visual interface is not applicable.
 
 Do not create per-feature copies of `.agents/` or repository policy.

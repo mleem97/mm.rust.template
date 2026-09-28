@@ -44,11 +44,15 @@ The marker is the first visible characters of the response.
 
 ## Mandatory decision records
 
-Every material product, architecture, UX/design, security, infrastructure, data, dependency, or workflow decision MUST have:
+Every material product, architecture, UX/design, security, infrastructure, data, dependency, or workflow decision MUST have all three:
 
-- a Product Requirements Document (PRD) describing the requirement;
-- an Architecture Decision Record (ADR) describing the architectural decision;
-- a Design Decision Record (DDR) describing the design decision where applicable.
+- a Product Requirements Document (PRD) describing the requirement and intent;
+- an Architecture Decision Record (ADR) describing the structural/technical decision;
+- a Design Decision Record (DDR) describing the decision's interaction, information, design, operational, or other human-facing consequences.
+
+A DDR is required even when the decision has no graphical UI; in that case it records the design consequences as not applicable and explains why.
+
+Feature work is not considered fully documented until its PRD, ADR, and DDR exist and are linked.
 
 ## User and Modder modes
 

@@ -26,14 +26,16 @@ docs/
 
 ## Documentation contract
 
-Every material feature has:
+Every material feature has all of the following:
 
-1. a PRD;
-2. an ADR for architecture decisions;
-3. a DDR for design decisions where applicable;
+1. a detailed PRD;
+2. an ADR;
+3. a DDR;
 4. security impact assessment;
 5. test/acceptance criteria;
 6. a wiki link when user-facing.
+
+Every material decision has a PRD, ADR, and DDR. If the decision has no graphical UI, the DDR explicitly records that the visual dimension is not applicable.
 
 ## Language and audience
 
@@ -47,4 +49,4 @@ Do not duplicate the entire documentation tree for every combination.
 
 ## 1.0.0 gate
 
-The first full release MUST document product scope, architecture, design, every feature, decisions, security, deployment, operations, troubleshooting, migration, release, user guidance, and modder/developer guidance where applicable.
+The first full release MUST document product scope, architecture, design, every feature, every decision, security, deployment, operations, troubleshooting, migration, release, user guidance, and modder/developer guidance where applicable.

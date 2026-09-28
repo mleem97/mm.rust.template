@@ -13,17 +13,19 @@ These rules are mandatory unless an explicit, reviewed exception is recorded.
 7. Tests MUST NOT be removed or weakened to hide failures.
 8. Unsafe Rust MUST be isolated and justified.
 9. External/untrusted data MUST be validated at system boundaries.
-10. Every material architectural decision MUST have an ADR.
+10. Every material decision MUST have a PRD, ADR, and DDR.
 11. Every material product requirement MUST have a PRD.
-12. Every material UI/design decision MUST have a DDR.
-13. Every feature MUST link its PRD, ADR, DDR, security impact, and validation plan where applicable.
-14. Documentation MUST have a canonical source.
-15. Agent instructions MUST be centralized under `.agents/`.
-16. Project documentation and planning MUST be centralized under `docs/`.
-17. Subdirectories MUST NOT contain duplicated agent policy or repository standards.
-18. Templates MUST use placeholders such as `<USER_NAME>`, `<PROJECT_NAME>`, and `<ORGANIZATION_NAME>`.
-19. Documentation language and audience MUST remain independent dimensions.
-20. Public audience modes MUST include User and Modder.
+12. Every material architecture/technical decision MUST have an ADR.
+13. Every material design, UX, information, operational, or human-facing consequence MUST be recorded in a DDR.
+14. A DDR MUST exist even when a decision has no graphical UI; the record must state that the visual/UI dimension is not applicable and record the remaining design consequences.
+15. Every feature MUST link its PRD, ADR, DDR, security impact, and validation plan.
+16. Documentation MUST have a canonical source.
+17. Agent instructions MUST be centralized under `.agents/`.
+18. Project documentation and planning MUST be centralized under `docs/`.
+19. Subdirectories MUST NOT contain duplicated agent policy or repository standards.
+20. Templates MUST use placeholders such as `<USER_NAME>`, `<PROJECT_NAME>`, and `<ORGANIZATION_NAME>`.
+21. Documentation language and audience MUST remain independent dimensions.
+22. Public audience modes MUST include User and Modder.
 
 ## Quality
 
