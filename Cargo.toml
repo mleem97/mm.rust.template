@@ -1,0 +1,33 @@
+[package]
+name = "mm-rust-template"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "General-purpose Rust repository template and engineering standard."
+license = "Apache-2.0"
+repository = "https://github.com/mleem97/mm.rust.template"
+readme = "README.md"
+
+[workspace]
+resolver = "3"
+members = ["."]
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "mm-rust-template"
+path = "src/main.rs"
+
+[workspace.lints.rust]
+unsafe_code = "deny"
+missing_debug_implementations = "warn"
+missing_docs = "warn"
+
+[workspace.lints.clippy]
+all = "warn"
+pedantic = "warn"
+nursery = "warn"
+
+[lints]
+workspace = true

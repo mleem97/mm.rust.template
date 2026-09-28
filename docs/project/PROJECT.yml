@@ -1,0 +1,29 @@
+project:
+  name: "<PROJECT_NAME>"
+  version: "0.1.0"
+  first_full_release: "1.0.0"
+  owner: "<USER_NAME>"
+  organization: "<ORGANIZATION_NAME>"
+  repository: "<REPOSITORY_URL>"
+
+technology:
+  primary_language: "rust"
+  edition: "2024"
+  toolchain: "stable"
+
+documentation:
+  language: "en"
+  audience: "user"
+  supported_languages: ["en", "de"]
+  supported_audiences: ["user", "modder"]
+
+governance:
+  main_branch: "main"
+  pull_requests_required: true
+  decisions_require_adr: true
+  design_decisions_require_ddr: true
+  features_require_prd: true
+
+knowledge:
+  canonical_root: "docs/"
+  agent_root: ".agents/"

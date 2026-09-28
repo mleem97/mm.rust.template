@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to this project are documented here.
+All notable changes to this template are documented here.
 
 The format follows Keep a Changelog and the project uses semantic versioning.
 
@@ -8,7 +8,9 @@ The format follows Keep a Changelog and the project uses semantic versioning.
 
 ### Added
 
-- Production-oriented MelonLoader IL2CPP template.
-- NuGet-based loader and interop dependency management.
-- Local game-assembly discovery and validation.
-- Build, deploy, packaging, CI, and initialization tooling.
+- Central `docs/` project knowledge architecture.
+- Central `.agents/` AI-agent architecture.
+- Mandatory PRD/ADR/DDR documentation model.
+- Threat model, security architecture, and security checklist.
+- Self-hosted AI task-graph blueprint.
+- Rust 2024 workspace baseline.

@@ -2,27 +2,27 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "gregMod: verify",
+      "label": "Rust: check",
       "type": "shell",
-      "command": "python",
-      "args": ["scripts/verify-env.py"],
-      "problemMatcher": []
+      "command": "cargo",
+      "args": ["check", "--workspace", "--all-targets", "--locked"],
+      "group": "build",
+      "problemMatcher": "$rustc"
     },
     {
-      "label": "gregMod: build Release",
+      "label": "Rust: test",
       "type": "shell",
-      "command": "dotnet",
-      "args": ["build", "gregMod.TemplateMod.sln", "-c", "Release"],
-      "group": {"kind": "build", "isDefault": true},
-      "problemMatcher": "$msCompile"
+      "command": "cargo",
+      "args": ["test", "--workspace", "--all-features", "--locked"],
+      "group": "test",
+      "problemMatcher": "$rustc"
     },
     {
-      "label": "gregMod: deploy",
+      "label": "Rust: clippy",
       "type": "shell",
-      "command": "python",
-      "args": ["scripts/deploy.py"],
-      "dependsOn": "gregMod: build Release",
-      "problemMatcher": []
+      "command": "cargo",
+      "args": ["clippy", "--workspace", "--all-targets", "--all-features", "--", "-D", "warnings"],
+      "problemMatcher": "$rustc"
     }
   ]
 }

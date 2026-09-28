@@ -1,36 +1,39 @@
-# .NET
-bin/
-obj/
-artifacts/
-TestResults/
-*.user
-*.suo
-*.cache
-*.nupkg
+# Rust
+/target/
+**/*.rs.bk
+Cargo.lock
 
-# Machine-specific dependency configuration
-Directory.Build.local.props
-.deps/
-references/*.dll
-references/**/*.dll
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+.local/
 
-# Game and loader binaries
-Assembly-CSharp.dll
-Il2Cppmscorlib.dll
-UnityEngine*.dll
-MelonLoader.dll
-0Harmony.dll
-Il2CppInterop*.dll
-gregCore.dll
+# Agent runtime state
+.agents/runtime/state/
+.agents/runtime/logs/
+.agents/runtime/checkpoints/
 
 # IDE
-.vs/
-.idea/
 .vscode/*.log
+.idea/
+*.swp
+*.swo
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Template state
-.template-initialized
+# Generated documentation/build output
+/site/
+dist/
+build/
+
+# Temporary
+*.tmp
+*.temp
